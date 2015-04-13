@@ -95,10 +95,5 @@ namespace ForumSystem
             }
             return null;
         }
-        public void test()
-        {
-            int x = 0;
-            int i = 1;
-        }
     }    
 }
