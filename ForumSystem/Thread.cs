@@ -35,7 +35,11 @@ namespace ForumSystem
         {
             return id;
         }
-        
+
+        public void enterThread()
+        {
+            displayMessages();
+        }
 
         public void displayMessages()
         {

@@ -37,6 +37,11 @@ namespace ForumSystem
             get { return this.ID; }
         }
 
+        public void enterForum()
+        {
+            displaySubforums();
+        }
+
         //This method displays a forum's sub forums
         public void displaySubforums()
         {

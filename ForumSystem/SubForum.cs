@@ -40,6 +40,11 @@ namespace ForumSystem
             get { return this.id; }
         }
 
+        public void enterSubForum()
+        {
+            displayThreads();
+        }
+
         //This method displays a sub-forum's threads
         public void displayThreads()
         {
