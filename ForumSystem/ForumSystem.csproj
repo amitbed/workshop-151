@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminForum.cs" />
     <Compile Include="Forum.cs" />
     <Compile Include="ForumSystem.cs" />
     <Compile Include="GoldMember.cs" />

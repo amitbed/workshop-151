@@ -33,13 +33,11 @@ namespace ForumSystem
             return forumSystem;   
         }
 
-        //This method adds a forum to the main forum system
         public void addForum(Forum forum)
         {
             forums.Add(forum);
         }
 
-        //This method displays all the forums in the system
         public void displayForums()
         {
             foreach (Forum forum in forums)
@@ -48,7 +46,6 @@ namespace ForumSystem
             }
         }
 
-        //This method returns all the forums in the system
         public List<Forum> getForums()
         {
             return forums;
@@ -68,9 +65,35 @@ namespace ForumSystem
             members.Add(new Member());
         }
 
-        public bool searchMember(long memberID)
+        public bool isUserNameExistes(string newUsername)
         {
-            return (members.Contains(memberID));
+            foreach (Member m in members)
+            {
+                if (m.UserName.Equals(newUsername))
+                    return true;
+            }
+            return false;
+        }
+
+        public Forum searchForum(long forumId)
+        {
+            foreach (Forum f in forums)
+            {
+                if (f.ID == forumId)
+                    return f;
+            }
+            return null;
+
+        }
+
+        public Member searchMember(long memberID)
+        {
+            foreach (Member m in members)
+            {
+                if (m.ID == memberID)
+                    return m;
+            }
+            return null;
         }
     }
 }

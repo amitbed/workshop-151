@@ -26,15 +26,20 @@ namespace ForumSystem
         
         //Methods
         //This method returns the thread title
-        public string getTitle()
+        public string Title
         {
-            return title;
+            get { return title; }
         }
        
         //This method returns all threads in the subForum
         public List<Thread> getThreads()
         {
             return threads;
+        }
+
+        public long ID
+        {
+            get { return this.id; }
         }
 
         //This method displays a sub-forum's threads

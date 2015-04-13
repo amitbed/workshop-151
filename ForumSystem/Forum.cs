@@ -10,7 +10,7 @@ namespace ForumSystem
     {
         private long id;
         private string title;
-        private List<SubForum> subForums;
+        protected List<SubForum> subForums;
         private List<long> admins;
         
         public Forum(string title, List<long> admins,long createdBy)
@@ -26,6 +26,7 @@ namespace ForumSystem
                 Console.WriteLine("You Cannot create a forum");
         }
         
+
         public string Title
         {
             get { return this.title; }
@@ -41,7 +42,7 @@ namespace ForumSystem
         {
             foreach (SubForum subForum in subForums)
             {
-                Console.WriteLine(subForum.getTitle());
+                Console.WriteLine(subForum.Title);
             }
         }
 
@@ -49,8 +50,19 @@ namespace ForumSystem
         {
             foreach (SubForum subForum in subForums)
             {
-                Console.WriteLine(subForum.getTitle());
+                Console.WriteLine(subForum.Title);
             }
+        }
+
+        public SubForum searchForum(long subForumid)
+        {
+            foreach (SubForum sb in subForums)
+            {
+                if (sb.ID == subForumid)
+                    return sb;
+            }
+
+            return null;
         }
 
         public void showForumsMainPage()
@@ -63,10 +75,7 @@ namespace ForumSystem
             return subForums;
         }
 
-        public void addSubForum(SubForum subForum)
-        {
-            subForums.Add(subForum);
-        }
+        
 
         public void deleteForum(Member potentialAdmin, SubForum requestedSubForum)
         {

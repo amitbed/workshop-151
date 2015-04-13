@@ -6,3 +6,4 @@ C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumSy
 C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
 C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
 C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
+\\psf\Home\Documents\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache

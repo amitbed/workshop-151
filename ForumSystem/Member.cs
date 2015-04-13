@@ -69,5 +69,9 @@ namespace ForumSystem
             return newEmail;
         }
 
+        public string UserName
+        {
+            get { return this.username; }
+        }
     }
 }
