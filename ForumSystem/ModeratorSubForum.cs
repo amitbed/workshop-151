@@ -8,16 +8,22 @@ namespace ForumSystem
 {
     public class ModeratorSubForum : SubForum
     {
-        public void addThread(long member, Thread thread)
+        public void addThread(Thread thread)
         {
             threads.Add(thread);
         }
 
         public void removeThread(long threadID)
         {
+            int i = 0;
             foreach (Thread t in threads)
             {
-                if (t.getId() == threadID) { }
+                if (t.getId() == threadID)
+                {
+                    threads.RemoveAt(i);
+                    break;
+                }
+                i = i + 1;
             }
         }
     }

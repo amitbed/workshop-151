@@ -44,6 +44,7 @@
     <Compile Include="Forum.cs" />
     <Compile Include="ForumSystem.cs" />
     <Compile Include="GoldMember.cs" />
+    <Compile Include="Guest.cs" />
     <Compile Include="IdGen.cs" />
     <Compile Include="IForum.cs" />
     <Compile Include="IForumSystem.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="SilverMember.cs" />
     <Compile Include="SubForum.cs" />
     <Compile Include="Thread.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
