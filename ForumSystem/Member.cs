@@ -27,6 +27,7 @@ namespace ConsoleApplication1
         public Member()
         {
             register();
+            _timeLoggedIn = 0;
             this.id = ForumSystem.idGen.generate();
             this.isActive = true;
             this.myForums = new List<long>();
@@ -42,6 +43,7 @@ namespace ConsoleApplication1
 
         private void register()
         {
+            string email=approveEmail();
             Console.WriteLine("Hi, please enter username");
             this.username = Console.ReadLine();
             while (fs.searchUername(username)) 
@@ -51,12 +53,21 @@ namespace ConsoleApplication1
             }
             Console.WriteLine("Please enter password");
             this.password = Console.ReadLine();
-            Console.WriteLine("Please enter email");
-            this.email = Console.ReadLine();
+           /* Console.WriteLine("Please enter email");*/
+            this.email = email;
             while (email.Contains("@")){
                 Console.WriteLine("Email should contain a @. Please retype another one");
                 this.email = Console.ReadLine();
             }
         }
+
+        private string approveEmail()
+        {
+            Console.WriteLine("Please enter email");
+            string newEmail = Console.ReadLine();
+            //send and receive approve
+            return newEmail;
+        }
+
     }
 }

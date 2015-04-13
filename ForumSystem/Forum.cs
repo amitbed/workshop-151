@@ -13,7 +13,7 @@ namespace ConsoleApplication1
         private List<SubForum> subForums;
         private List<long> admins;
         
-        public Forum(int id, string title, List<long> admins,long createdBy)
+        public Forum(string title, List<long> admins,long createdBy)
         {
             if (admins.Contains(createdBy))
             {

@@ -8,8 +8,15 @@ namespace ConsoleApplication1
 {
     class Message : IMessage
     {
+        private int id;
+        private int topicId;
+        private string content;
+        private DateTime date;
+        private long userId;
+        private List<Message> replies;
+
         //Overload Contructor
-        public Message(int topicId, string content, string userId)
+        public Message(int topicId, string content, long userId)
         {
             Random rnd = new Random();
             this.id = rnd.Next(2000, 20000);
@@ -20,15 +27,16 @@ namespace ConsoleApplication1
             this.replies = new List<Message>();
         }
         //Member Variables
-        private int id;
-        private int topicId;
-        private string content;
-        private DateTime date;
-        private string userId;
-        private List<Message> replies;
+        
 
         //Methods
         //This method returns a message content
+
+        public long UserID
+        {
+            get { return this.userId; }
+        }
+        
         public string getContent()
         {
             return content;

@@ -59,7 +59,7 @@ namespace ConsoleApplication1
             foreach (Thread thread in threads){
                 List<Message> messages = thread.getMessages();
                 foreach (Message m in messages){
-                    if (m.ID==memberId)
+                    if (m.UserID==memberId)
                         Console.WriteLine("complaint sent");
                 }
             }
