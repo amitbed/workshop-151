@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ForumSystem;
 
 namespace ForumTests
 {
@@ -9,8 +10,11 @@ namespace ForumTests
     /// Summary description for TestSubForum
     /// </summary>
     [TestClass]
-    public class TestSubForum
+    public class TestSubForum: ProjectTest
     {
+        private BridgeProject bridge = Driver.getBridge();
+        ForumSystem.ForumSystem system = ForumSystem.ForumSystem.getInstance();
+
         public TestSubForum()
         {
             //
@@ -18,52 +22,41 @@ namespace ForumTests
             //
         }
 
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
+        [TestMethod]
+        public void AddNewSubForumTest()
         {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
+            //base.SetUp();
+            List<SubForum> FoodSubs = new List<SubForum>();
+            SubForum PassoverRecepies = setUpSubForum(11, "PassoverRecepies", null, "Food");
+            SubForum ChosherRecepies = setUpSubForum(12, "ChosherRecepies", null, "Food");
+            FoodSubs.Add(PassoverRecepies);
+            FoodSubs.Add(ChosherRecepies);
+            Forum currForum = system.getForums()[1];
+            addSubForumToForum(currForum, PassoverRecepies);
+            addSubForumToForum(currForum, ChosherRecepies);
+            Assert.IsTrue(subForumInForum(FoodSubs, currForum));
         }
 
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
+        public bool subForumInForum(List<SubForum> FoodSubs, Forum Food)
+        {
+            bool ans = true;
+            for (int i = 0; i < FoodSubs.Count; i++)
+            {
+                foreach (SubForum sub in Food.getSubForums())
+                {
+                    if (!FoodSubs.Contains(sub))
+                    {
+                        ans = false;
+                    }
+                }
+            }
+            return ans;
+        }
 
         [TestMethod]
-        public void TestMethod1()
+        public void removeSubForum()
         {
-            //
-            // TODO: Add test logic here
-            //
+
         }
     }
 }
