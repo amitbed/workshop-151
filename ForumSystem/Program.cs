@@ -167,12 +167,12 @@ namespace ForumSystem
         //This method creates a sub-forum
         static void createSubForum(string title, string parent, List<string> moderators, ForumSystem forumSystem)
         {
-            SubForum subForum = new SubForum(0, title, moderators, parent);
+            SubForum subForum = new SubForum(title, moderators, parent);
             foreach (Forum forum in forumSystem.getForums())
             {
-                if (string.Equals(forum.getTitle(), parent))
+                if (string.Equals(forum.Title, parent))
                 {
-                    forum.addSubForum(subForum);
+                    forum.getSubForums().Add(subForum);
                 }
             }
         }
