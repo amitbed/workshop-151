@@ -45,5 +45,10 @@ namespace ForumSystem
         {
             get { return this.username; }
         }
+
+        public string getPassword()
+        {
+            return password;
+        }
     }
 }

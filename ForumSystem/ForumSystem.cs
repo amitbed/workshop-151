@@ -96,5 +96,10 @@ namespace ForumSystem
             }
             return null;
         }
+
+        public List<Member> getMembers()
+        {
+            return members;
+        }
     }    
 }
