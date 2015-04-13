@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +9,6 @@ namespace ForumTests
     public class realProject : BridgeProject
     {
         ForumSystem.ForumSystem system = ForumSystem.ForumSystem.getInstance();
-
-        public void addNewaddNewForum(Forum forum)
-        {
-            system.addForum(forum);
-        }
 
         public Forum createForum(int id, string title, List<int> admins)
         {
@@ -29,6 +24,16 @@ namespace ForumTests
         public void addForumToSystem(Forum forum)
         {
             system.addForum(forum);
+        }
+
+        public void setForumProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void addSubForumToForum(Forum forum, SubForum sf)
+        {
+            forum.addSubForum(sf);
         }
     }
 }
