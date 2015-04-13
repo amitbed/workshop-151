@@ -1,0 +1,7 @@
+c:\users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\obj\Debug\ForumTests.csprojResolveAssemblyReference.cache
+C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\bin\Debug\ForumTests.dll
+C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\bin\Debug\ForumTests.pdb
+C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\obj\Debug\ForumTests.dll
+C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\obj\Debug\ForumTests.pdb
+C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\bin\Debug\ForumSystem.exe
+C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\bin\Debug\ForumSystem.pdb
