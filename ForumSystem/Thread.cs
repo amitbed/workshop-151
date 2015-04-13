@@ -8,7 +8,10 @@ namespace ForumSystem
 {
     class Thread : IThread
     {
-        //Overload Constructor
+        private int id;
+        private string title;
+        private List<Message> messages;
+
         public Thread(string title)
         {
             Random rnd = new Random();
@@ -17,11 +20,6 @@ namespace ForumSystem
             this.messages = new List<Message>();
         }
         
-        //Member Variables
-        private int id;
-        private string title;
-        private List<Message> messages;
-
         //Methods
         public string getTitle()
         {
@@ -33,10 +31,11 @@ namespace ForumSystem
             return messages;
         }
 
-        public int getTopicId()
+        public int getId()
         {
             return id;
         }
+        
 
         public void displayMessages()
         {

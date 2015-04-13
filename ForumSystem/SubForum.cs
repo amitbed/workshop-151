@@ -10,7 +10,7 @@ namespace ForumSystem
     {
         private long id;
         private string title;
-        private List<Thread> threads;
+        protected List<Thread> threads;
         private List<string> moderators;
         private ForumSystem fs;
 
@@ -21,8 +21,6 @@ namespace ForumSystem
             this.title = title;
             this.moderators = moderators;
         }
-        
-        //Member Variables
         
         //Methods
         //This method returns the thread title
@@ -49,14 +47,6 @@ namespace ForumSystem
             {
                 Console.WriteLine(thread.getTopicId() + ". " + thread.getTitle());
             }
-        }
-
-        public void delete()
-        {
-            this.id = 0;
-            this.moderators = null;
-            this.threads = null;
-            this.title = "";
         }
 
         public void sendComplaint(int admin, long memberId)
