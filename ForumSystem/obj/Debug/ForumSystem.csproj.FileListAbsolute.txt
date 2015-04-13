@@ -7,3 +7,4 @@ C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssem
 C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
 C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
 \\psf\Home\Documents\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache

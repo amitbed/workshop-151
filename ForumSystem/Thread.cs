@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    class Thread : IThread
+    public class Thread : IThread
     {
         private int id;
         private string title;

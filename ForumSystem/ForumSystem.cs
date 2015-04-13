@@ -33,9 +33,10 @@ namespace ForumSystem
             return forumSystem;   
         }
 
-        public void addForum(Forum forum)
+        public void addForum(string title, List<long> admins, long creator)
         {
-            forums.Add(forum);
+            Forum newForum = new Forum(title, admins, creator);
+            forums.Add(newForum);
         }
 
         public void displayForums()

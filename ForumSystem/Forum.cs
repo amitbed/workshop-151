@@ -46,14 +46,6 @@ namespace ForumSystem
             }
         }
 
-        public void displaySubforums()
-        {
-            foreach (SubForum subForum in subForums)
-            {
-                Console.WriteLine(subForum.Title);
-            }
-        }
-
         public SubForum searchForum(long subForumid)
         {
             foreach (SubForum sb in subForums)
@@ -86,7 +78,7 @@ namespace ForumSystem
             }
             else
             {
-                Console.WriteLine("This is not admin");
+                Console.WriteLine("This is not a super admin!");
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    class Message : IMessage
+    public class Message : IMessage
     {
         private int id;
         private int topicId;
