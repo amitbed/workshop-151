@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +8,11 @@ namespace ForumTests
 {
     interface BridgeProject
     {
-        void addNewaddNewForum(ForumSystem.Forum Forum);
         Forum createForum(int id, string title, List<int> admins);
         SubForum createSubForum(int id, string title, List<string> moderators, string parent);
-        void addForumToSystem(Forum Dating);
+        void addForumToSystem(Forum forum);
+        void setForumProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy);
+        void addSubForumToForum(Forum forum, SubForum sf);
     }
 }
 
