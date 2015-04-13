@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ForumSystem;
@@ -8,8 +8,15 @@ namespace ForumTests
     [TestClass]
     public class ProjectTest
     {
-        private BridgeProject bridge;
+        private BridgeProject bridge = Driver.getBridge();
         ForumSystem.ForumSystem system;
+        bool firstEntry = true;
+        [TestMethod]
+        public void initForumTest()
+        {
+            SetUp();
+            Assert.IsNotNull(system);
+        }
 
         //List<UserInfo> membersList;
         //readonly User Sagi = createMember(30548, "sagiav", "sagiav@post.bgu.ac.il","gold", "maihyafa", true, null, null, null, null);
@@ -24,7 +31,10 @@ namespace ForumTests
         {
             this.bridge = Driver.getBridge();
             //setUpMembers();
-            setUpForum();
+            if (firstEntry == true)
+            {
+                setUpForum();
+            }
             //setUpForumSystem();
             //setUpSubForum();
         }
@@ -37,6 +47,7 @@ namespace ForumTests
 
             bridge.addForumToSystem(Dating);
             bridge.addForumToSystem(Food);
+            firstEntry = false;
         }
 
         public Forum getForum(int i)
@@ -49,21 +60,32 @@ namespace ForumTests
             return bridge.createSubForum(id, title, moderators, parent);
         }
 
-        public bool subForumInForum(List<SubForum> FoodSubs, Forum Food)
+        public void addForumToSystem(Forum forum)
         {
-            bool ans = true;
-            for (int i = 0; i < FoodSubs.Count; i++)
-            {
-                foreach (SubForum sub in Food.getSubForums())
-                {
-                    if (!FoodSubs.Contains(sub))
-                    {
-                        ans = false;
-                    }
-                }
-            }
-            return ans;
+            bridge.addForumToSystem(forum);
         }
+
+        public Forum CreateForum(int id, string title, List<int> admins)
+        {
+            return bridge.createForum(id, title, admins);
+        }
+
+        public void setForumProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy)
+        {
+            bridge.setForumProperties(ForumName, moderatorsMaxNum, format, precentPasswordPolicy);
+        }
+
+        public bool ComparerProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy)
+        {
+            //TODO: add getForumByName and compare its properties
+            return true;
+        }
+
+        public void addSubForumToForum(Forum forum, SubForum sf)
+        {
+            bridge.addSubForumToForum(forum, sf);
+        }
+
         //private void setUpForumSystem()
         //{
         //    ForumSystem.ForumSystem system = ;
