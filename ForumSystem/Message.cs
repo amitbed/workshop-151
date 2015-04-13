@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForumSystem
+namespace ConsoleApplication1
 {
-    public class Message
+    class Message : IMessage
     {
         //Overload Contructor
         public Message(int topicId, string content, string userId)
@@ -52,6 +52,11 @@ namespace ForumSystem
             Console.WriteLine("Message Id: " + getMessageId());
             Console.WriteLine(date);
             Console.WriteLine(content);
+        }
+
+        public void deleteMessage()
+        {
+            this.replies = null;
         }
 
         public List<Message> getReplies()

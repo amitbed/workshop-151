@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForumSystem
+namespace ConsoleApplication1
 {
-    public class Thread
+    class Thread : IThread
     {
         //Overload Constructor
         public Thread(string title)
@@ -16,7 +16,7 @@ namespace ForumSystem
             this.title = title;
             this.messages = new List<Message>();
         }
-
+        
         //Member Variables
         private int id;
         private string title;
@@ -43,6 +43,18 @@ namespace ForumSystem
             foreach (Message message in messages)
             {
                 message.displayMessage();
+            }
+        }
+
+        public void deleteMessage(int messageID)
+        {
+            foreach (Message m in messages)
+            {
+                if (m.getMessageId()==messageID)
+                {
+                    m.deleteMessage();
+                    messages.Remove(m);
+                }
             }
         }
     }

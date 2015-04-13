@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ForumSystem;
 
-namespace ForumSystem
+namespace ConsoleApplication1
 {
     class Program
     {
         static void Main(string[] args)
         {
-           ForumSystem forumSystem = ForumSystem.getInstance();        //create singleton instance of Forum System
+            ForumSystem forumSystem = ForumSystem.getInstance();        //create singleton instance of Forum System
             forumSystem.addForum(new Forum(0, "Sports", new List<int>()));
             forumSystem.addForum(new Forum(0, "Politics", new List<int>()));
             forumSystem.addForum(new Forum(0, "Travel", new List<int>()));

@@ -4,31 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForumSystem
+namespace ConsoleApplication1
 {
-    public class Forum
+    class Forum : IForum
     {
-        //Overload Constructor
-        public Forum(int id, string title, List<int> admins)
-        {
-            this.id = id;
-            this.subForums = new List<SubForum>();
-            this.title = title;
-            this.admins = admins;
-        }
-
-        //Member Variables
-        private int id;
+        private long id;
         private string title;
         private List<SubForum> subForums;
-        private List<int> admins;
-
-        //Methods
-
-        //Gets the forum's title
-        public string getTitle()
+        private List<long> admins;
+        
+        public Forum(int id, string title, List<long> admins,long createdBy)
         {
-            return title;
+            if (admins.Contains(createdBy))
+            {
+                this.id = ForumSystem.idGen.generate();
+                this.subForums = new List<SubForum>();
+                this.title = title;
+                this.admins = admins;
+            }
+            else
+                Console.WriteLine("You Cannot create a forum");
+        }
+        
+        public string Title
+        {
+            get { return this.title; }
+        }
+
+        public long ID
+        {
+            get { return this.ID; }
         }
 
         //This method displays a forum's sub forums
@@ -40,16 +45,40 @@ namespace ForumSystem
             }
         }
 
-        //This method returns a forum's sub-forums
+        public void displaySubforums()
+        {
+            foreach (SubForum subForum in subForums)
+            {
+                Console.WriteLine(subForum.getTitle());
+            }
+        }
+
+        public void showForumsMainPage()
+        {
+            displaySubforums();
+        }
+
         public List<SubForum> getSubForums()
         {
             return subForums;
         }
 
-        //This method adds a sub-forum to the current forum
         public void addSubForum(SubForum subForum)
         {
             subForums.Add(subForum);
+        }
+
+        public void deleteForum(Member potentialAdmin, SubForum requestedSubForum)
+        {
+            if (this.admins.Contains(potentialAdmin.ID))
+            {
+                requestedSubForum.delete();
+                this.subForums.Remove(requestedSubForum);
+            }
+            else
+            {
+                Console.WriteLine("This is not admin");
+            }
         }
     }
 }

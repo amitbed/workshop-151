@@ -4,32 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForumSystem
+namespace ConsoleApplication1
 {
-    public class SubForum
+    class SubForum
     {
-        //Overload Constructor
-        public SubForum(int id, string title, List<string> moderators, string parent)
+        private long id;
+        private string title;
+        private List<Thread> threads;
+        private List<string> moderators;
+        private ForumSystem fs;
+
+        public SubForum(string title, List<string> moderators, string parent)
         {
-            this.id = id;
+            this.id = ForumSystem.idGen.generate();
             this.threads = new List<Thread>();
             this.title = title;
             this.moderators = moderators;
         }
-
+        
         //Member Variables
-        private int id;
-        private string title;
-        private List<Thread> threads;
-        private List<string> moderators;
-
+        
         //Methods
         //This method returns the thread title
         public string getTitle()
         {
             return title;
         }
-
+       
         //This method returns all threads in the subForum
         public List<Thread> getThreads()
         {
@@ -42,6 +43,25 @@ namespace ForumSystem
             foreach (Thread thread in threads)
             {
                 Console.WriteLine(thread.getTopicId() + ". " + thread.getTitle());
+            }
+        }
+
+        public void delete()
+        {
+            this.id = 0;
+            this.moderators = null;
+            this.threads = null;
+            this.title = "";
+        }
+
+        public void sendComplaint(int admin, long memberId)
+        {
+            foreach (Thread thread in threads){
+                List<Message> messages = thread.getMessages();
+                foreach (Message m in messages){
+                    if (m.ID==memberId)
+                        Console.WriteLine("complaint sent");
+                }
             }
         }
     }
