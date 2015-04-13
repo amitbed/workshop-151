@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ForumSystem;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ namespace ForumTests
     public class TestForum : ProjectTest
     {
         private Forum Dating, Food;
-        ForumSystem.ForumSystem system;
+        ForumSystem.ForumSystem system = ForumSystem.ForumSystem.getInstance();
 
         public override void SetUp()
         {
@@ -25,28 +25,46 @@ namespace ForumTests
         }
 
         [TestMethod]
-        public void initForumTest()
+        public void AddForumTest()
         {
             SetUp();
-            Assert.IsNotNull(system);
-        }
-
-
-        [TestMethod]
-        public void AddNewSubForumTest()
-        {
-            List<SubForum> FoodSubs = new List<SubForum>();
-            SubForum PassoverRecepies = setUpSubForum(11, "PassoverRecepies", null, "Food");
-            SubForum ChosherRecepies = setUpSubForum(12, "ChosherRecepies", null, "Food");
-            FoodSubs.Add(PassoverRecepies);
-            FoodSubs.Add(ChosherRecepies);
-            Assert.IsTrue(subForumInForum(FoodSubs, Food));
+            int initCapacity = system.getForums().Count;
+            Forum Sport = CreateForum(13, "Sport", null);
+            addForumToSystem(Sport);
+            int afterCapacity = system.getForums().Count;
+            bool ans = false;
+            if (afterCapacity == initCapacity + 1)
+            {
+                ans = true;
+            }
+            Assert.IsTrue(ans);
         }
 
         [TestMethod]
-        public void removeSubForum()
+        public void AddForumFalseTest()
         {
+            int initCapacity = system.getForums().Count;
+            Forum Sport = CreateForum(13, "Sport", null);
+            addForumToSystem(Sport);
+            int afterCapacity = system.getForums().Count;
+            bool ans = false;
+            if (afterCapacity != initCapacity + 1)
+            {
+                ans = true;
+            }
+            Assert.IsFalse(ans);
+        }
 
+        [TestMethod]
+        public void setForumPropertiesTest()
+        {
+            setForumProperties("Sport", 5 , "CapsLock", 70);
+            bool ans = false;
+            if (ComparerProperties("Sport", 5, "CapsLock", 70))
+            {
+                ans = true;
+            }
+            Assert.IsTrue(ans);
         }
     }
 }
