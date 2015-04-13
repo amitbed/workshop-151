@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,15 +22,6 @@ namespace ForumTests
             return this.real;
         }
 
-
-        public void addNewaddNewForum(ForumSystem.Forum forum)
-        {
-            if (this.real != null)
-            {
-                real.addNewaddNewForum(forum);
-            }
-        }
-
         public ForumSystem.Forum createForum(int id, string title, List<int> admins)
         {
             if (this.real != null)
@@ -39,7 +30,6 @@ namespace ForumTests
             }
             return null;
         }
-
 
         public SubForum createSubForum(int id, string title, List<string> moderators, string parent)
         {
@@ -55,6 +45,24 @@ namespace ForumTests
             if (this.real != null)
             {
                 real.addForumToSystem(forum);
+            }
+        }
+
+
+        public void setForumProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy)
+        {
+            if (this.real != null)
+            {
+                real.setForumProperties(ForumName, moderatorsMaxNum, format, precentPasswordPolicy);
+            }
+        }
+
+
+        public void addSubForumToForum(Forum forum, SubForum sf)
+        {
+            if (this.real != null)
+            {
+                real.addSubForumToForum(forum, sf);
             }
         }
     }
