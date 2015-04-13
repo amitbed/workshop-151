@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace ForumSystem
 {
     public class Member
     {
@@ -46,7 +46,7 @@ namespace ConsoleApplication1
             string email=approveEmail();
             Console.WriteLine("Hi, please enter username");
             this.username = Console.ReadLine();
-            while (fs.searchUername(username)) 
+            while (forumSystem.searchUername(username)) // what is it?
             {               //should be used through a DB. meanwhile we need to create a 
                 Console.WriteLine("Username is taken. Please choose another one");
                 this.username = Console.ReadLine();
