@@ -22,47 +22,55 @@ namespace ForumTests
             return this.real;
         }
 
-        public ForumSystem.Forum createForum(int id, string title, List<int> admins)
+        public Forum createForum(string title, List<long> admins, long creator)
         {
             if (this.real != null)
             {
-                return (real.createForum(id, title, admins));
+                return createForum(title, admins, creator);
             }
-            return null;
+            else return null;
         }
 
-        public SubForum createSubForum(int id, string title, List<string> moderators, string parent)
+        public SubForum createSubForum(string title, string parent, List<string> moderators)
         {
             if (this.real != null)
             {
-                return (real.createSubForum(id, title, moderators, parent));
+                return createSubForum(title, parent, moderators);
             }
-            return null;
+            else return null;
         }
 
-        public void addForumToSystem(Forum forum)
+        public void removeForum(long forumId)
         {
             if (this.real != null)
             {
-                real.addForumToSystem(forum);
-            }
-        }
-
-
-        public void setForumProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy)
-        {
-            if (this.real != null)
-            {
-                real.setForumProperties(ForumName, moderatorsMaxNum, format, precentPasswordPolicy);
+                removeForum(forumId);
             }
         }
 
-
-        public void addSubForumToForum(Forum forum, SubForum sf)
+        public void removeSubForum(long subForumId)
         {
             if (this.real != null)
             {
-                real.addSubForumToForum(forum, sf);
+                removeForum(subForumId);
+            }
+        }
+
+        public bool login(long id, string username, string password)
+        {
+            if (this.real != null)
+            {
+                return login(id, username, password);
+            }
+            else
+                return false;
+        }
+
+        public void logout()
+        {
+            if (this.real != null)
+            {
+                logout();
             }
         }
     }

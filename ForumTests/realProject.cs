@@ -10,30 +10,36 @@ namespace ForumTests
     {
         ForumSystem.ForumSystem system = ForumSystem.ForumSystem.getInstance();
 
-        public Forum createForum(int id, string title, List<int> admins)
+        public Forum createForum(string title, List<long> admins, long creator)
         {
-            return (new Forum(id, title, admins));
+            return system.searchForum(system.addForum(title, admins, creator));
         }
 
-
-        public SubForum createSubForum(int id, string title, List<string> moderators, string parent)
+        public SubForum createSubForum(string title, string parent, List<string> moderators)
         {
-            return new SubForum(id, title, moderators, parent); 
+            AdminForum currForum = (ForumSystem. AdminForum)system.searchForum(parent);
+            long subForumId = currForum.createSubForum(title, parent, moderators);
+            return currForum.searchSubForum(subForumId);
         }
 
-        public void addForumToSystem(Forum forum)
-        {
-            system.addForum(forum);
-        }
-
-        public void setForumProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy)
+        public void removeForum(long forumId)
         {
             throw new NotImplementedException();
         }
 
-        public void addSubForumToForum(Forum forum, SubForum sf)
+        public void removeSubForum(long subForumId)
         {
-            forum.addSubForum(sf);
+            throw new NotImplementedException();
+        }
+
+        public bool login(long id, string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void logout()
+        {
+            throw new NotImplementedException();
         }
     }
 }

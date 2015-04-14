@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    class AdminForum : Forum
+    public class AdminForum : Forum
     {
         public AdminForum()
         {
@@ -22,7 +22,7 @@ namespace ForumSystem
             }
         }
 
-        public void createSubForum(string title, string parent, List<string> moderators)
+        public long createSubForum(string title, string parent, List<string> moderators)
         {
             SubForum subForum = new SubForum(title, moderators, parent);
             ForumSystem forumSystem = ForumSystem.getInstance();
@@ -33,6 +33,7 @@ namespace ForumSystem
                 if (sb == null)
                     f.addSubForum(subForum);
             }
+            return subForum.ID;
         }
     }
 }

@@ -35,10 +35,11 @@ namespace ForumSystem
             return forumSystem;
         }
 
-        public void addForum(string title, List<long> admins, long creator)
+        public long addForum(string title, List<long> admins, long creator)
         {
             Forum newForum = new Forum(title, admins, creator);
             forums.Add(newForum);
+            return newForum.id;
         }
 
         public void displayForums()
@@ -107,7 +108,7 @@ namespace ForumSystem
         }
 
 
-        internal Forum searchForum(string parent)
+        public Forum searchForum(string parent)
         {
             foreach (Forum f in forums)
             {
