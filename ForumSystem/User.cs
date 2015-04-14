@@ -8,6 +8,7 @@ namespace ForumSystem
 {
     class User
     {
+        virtual public void register();
         //should be search function sometimes
     }
 }

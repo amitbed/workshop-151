@@ -19,7 +19,12 @@ namespace ForumSystem
         {
             idGen = new IdGen();
             forums = new List<Forum>();
-            Member super = new Member();
+         //   Member super = new Member();
+
+            User super = new Guest();
+            super.register();
+            super = members.ElementAt(0);
+
             superAdmin = super.ID;
             members.Add(super);
         }       
