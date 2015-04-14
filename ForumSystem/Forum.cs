@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {   
-    class Forum : IForum
+    public class Forum
     {
         private long id;
         private string title;

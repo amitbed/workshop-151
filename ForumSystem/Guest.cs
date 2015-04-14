@@ -13,7 +13,7 @@ namespace ForumSystem
         {
             Console.WriteLine("Hi, please enter username");
             string username = Console.ReadLine();
-            while (forumSystem.searchUername(username)) // what is it?
+            while (forumSystem.isUsernameExistes(username)) // what is it?
             {               //should be used through a DB. meanwhile we need to create a 
                 Console.WriteLine("Username is taken. Please choose another one");
                 username = Console.ReadLine();
@@ -21,7 +21,7 @@ namespace ForumSystem
             Console.WriteLine("Please enter password");
             string password = Console.ReadLine();
             string email = approveEmail();
-            Member member = new Member(username, password, email);
+            forumSystem.addMember(username, password, email);
         }
 
         private string approveEmail()

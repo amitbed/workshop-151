@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    class IdGen
+    public class IdGen
     {
         private long uniqueId;
             

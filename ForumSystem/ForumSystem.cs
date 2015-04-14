@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    class ForumSystem : IForumSystem
+    public class ForumSystem
     {
 
         private static ForumSystem forumSystem = null;
@@ -19,15 +19,11 @@ namespace ForumSystem
         {
             idGen = new IdGen();
             forums = new List<Forum>();
-         //   Member super = new Member();
-
-            User super = new Guest();
-            super.register();
-            super = members.ElementAt(0);
-
-            superAdmin = super.ID;
-            members.Add(super);
-        }       
+            User superGuest = new Guest();
+            superGuest.register();
+            Member superMember = members.ElementAt(0);
+            superAdmin = superMember.ID;
+        }
 
         public static ForumSystem getInstance()
         {
@@ -66,12 +62,12 @@ namespace ForumSystem
             }
         }
 
-        public void addMember()
+        public void addMember(string username, string password, string email)
         {
-            members.Add(new Member());
+            members.Add(new Member(username, password, email));
         }
 
-        public bool isUserNameExistes(string newUsername)
+        public bool isUsernameExistes(string newUsername)
         {
             foreach (Member m in members)
             {

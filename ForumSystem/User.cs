@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    class User
+    public abstract class User
     {
-        virtual public void register();
+        //abstract public void register();
         //should be search function sometimes
     }
 }

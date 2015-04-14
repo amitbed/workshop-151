@@ -18,3 +18,9 @@ C:\Users\hilel\workshop-151\ForumTests\obj\Debug\ForumTests.pdb
 \\psf\Home\Documents\workshop-151\ForumTests\bin\Debug\ForumSystem.pdb
 \\psf\Home\Documents\workshop-151\ForumTests\obj\Debug\ForumTests.dll
 \\psf\Home\Documents\workshop-151\ForumTests\obj\Debug\ForumTests.pdb
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\bin\Debug\ForumTests.dll
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\bin\Debug\ForumTests.pdb
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\bin\Debug\ForumSystem.exe
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\bin\Debug\ForumSystem.pdb
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\obj\Debug\ForumTests.dll
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\obj\Debug\ForumTests.pdb
