@@ -15,7 +15,7 @@ namespace ForumSystem
         long superAdmin;
         public List<Member> members { get; set; }
 
-        private ForumSystem() 
+        private ForumSystem()
         {
             idGen = new IdGen();
             forums = new List<Forum>();
@@ -28,11 +28,11 @@ namespace ForumSystem
 
         public static ForumSystem getInstance()
         {
-            if (forumSystem == null) 
+            if (forumSystem == null)
             {
                 forumSystem = new ForumSystem();
             }
-            return forumSystem;   
+            return forumSystem;
         }
 
         public void addForum(string title, List<long> admins, long creator)
@@ -98,6 +98,23 @@ namespace ForumSystem
             }
             return null;
         }
-    }    
 
+        public void deleteForum(long forumID)
+        {
+            Forum toBeDleted = searchForum(forumID);
+            if (toBeDleted != null)
+                this.forums.Remove(toBeDleted);
+        }
+
+
+        internal Forum searchForum(string parent)
+        {
+            foreach (Forum f in forums)
+            {
+                if (f.title == parent)
+                    return f;
+            }
+            return null;
+        }
     }
+}

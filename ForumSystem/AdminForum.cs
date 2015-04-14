@@ -8,6 +8,10 @@ namespace ForumSystem
 {
     class AdminForum : Forum
     {
+        public AdminForum()
+        {
+      
+        }
 
         public void removeSubForum(long forumID)
         {
@@ -18,9 +22,17 @@ namespace ForumSystem
             }
         }
 
-        public void addSubForum(SubForum subForum)
+        public void createSubForum(string title, string parent, List<string> moderators)
         {
-            subForums.Add(subForum);
+            SubForum subForum = new SubForum(title, moderators, parent);
+            ForumSystem forumSystem = ForumSystem.getInstance();
+            Forum f=forumSystem.searchForum(parent);
+            if (f!=null)
+            {
+                SubForum sb = f.searchSubForum(subForum.ID);
+                if (sb == null)
+                    f.addSubForum(subForum);
+            }
         }
     }
 }

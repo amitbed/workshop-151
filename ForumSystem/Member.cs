@@ -9,10 +9,32 @@ namespace ForumSystem
     public class Member : User
     {
         public long id { get; set; }
+        public long enter;
         public string username { get; set; }
         private string email;
+<<<<<<< Updated upstream
         public string password { get; set; }
         private bool isActive;
+=======
+        public ForumSystem system = ForumSystem.getInstance();
+        public string password { get; set; }
+        public bool isActive
+        {
+            get { return isActive; }
+            set
+            {
+                if (value)
+                {
+                    enter = DateTime.Now.Hour;
+                }
+                else
+                {
+                    timeLoggedIn +=DateTime.Now.Hour- enter;
+                    enter = 0;
+                }
+            }
+        }
+>>>>>>> Stashed changes
         private List<long> myFriends;
         private List<long> myThreads;
         private List<long> mySubForums;
@@ -39,22 +61,12 @@ namespace ForumSystem
         }
 
         //This method creates a sub-forum
-        public void createSubForum(string title, string parent, List<string> moderators, ForumSystem forumSystem)
-        {
-            SubForum subForum = new SubForum(title, moderators, parent);
-            foreach (Forum forum in forumSystem.getForums())
-            {
-                if (string.Equals(forum.title, parent))
-                {
-                    forum.getSubForums().Add(subForum);
-                }
-            }
-        }
+       
 
         //This method shows all sub forums of a given forum
-        public void viewSubForums(string forumName, ForumSystem mainForum)
+        public void viewSubForums(string forumName)
         {
-            foreach (Forum forum in mainForum.getForums())
+            foreach (Forum forum in system.getForums())
             {
                 if (String.Equals(forumName, forum.title))
                 {
@@ -64,9 +76,9 @@ namespace ForumSystem
         }
 
         //This method shows all discussions of a given sub-forum
-        public void viewDiscussions(string subForumName, string parent, ForumSystem mainForum)
+        public void viewDiscussions(string subForumName, string parent)
         {
-            foreach (Forum forum in mainForum.getForums())
+            foreach (Forum forum in system.getForums())
             {
                 if (String.Equals(parent, forum.title))
                 {
@@ -82,9 +94,9 @@ namespace ForumSystem
         }
 
         //This method displays messages of a thread
-        public void viewMessages(int threadId, string subForumName, string parent, ForumSystem mainForum)
+        public void viewMessages(int threadId, string subForumName, string parent)
         {
-            foreach (Forum forum in mainForum.getForums())
+            foreach (Forum forum in system.getForums())
             {
                 if (String.Equals(parent, forum.title))
                 {
@@ -106,9 +118,9 @@ namespace ForumSystem
         }
 
         //This method displays a message's replies
-        public void displayReplies(ForumSystem mainForum, string forumName, string subForumName, int discussionId, int messageId)
+        public void displayReplies(string forumName, string subForumName, int discussionId, int messageId)
         {
-            foreach (Forum forum in mainForum.getForums())
+            foreach (Forum forum in system.getForums())
             {
                 if (String.Equals(forumName, forum.title))
                 {
@@ -138,37 +150,13 @@ namespace ForumSystem
             }
         }
 
-        public void createThread(ForumSystem forumSystem)
-        {
-            Console.WriteLine("Select a forum to view:");
-            forumSystem.displayForums();
-            string forum = Console.ReadLine();
-            Console.WriteLine("Select a sub-forum to view");
-            viewSubForums(forum, forumSystem);
-            string subForum = Console.ReadLine();
-            Console.WriteLine("Enter Thread Title:");
-            string threadTitle = Console.ReadLine();
-            Thread thread = new Thread(threadTitle);
-            Console.WriteLine("Enter Message Content:");
-            string content = Console.ReadLine();
-            Message message = new Message(thread.id, content, this.id);
-            thread.getMessages().Add(message);
-            foreach (Forum forumName in forumSystem.getForums())
-            {
-                if (string.Equals(forumName.title, forum))
-                {
-                    foreach (SubForum subForumName in forumName.getSubForums())
-                    {
-                        if (string.Equals(subForumName.Title, subForum))
-                        {
-                            subForumName.getThreads().Add(thread);
-                        }
-                    }
-                }
-            }
-        }
+        
 
-        public void postReply(ForumSystem forumSystem, string username)
+        public void logut()
+        {
+            this.isActive = false;
+        }
+        public void postReply(long id)
         {
             Console.WriteLine("Select a forum to view:");
             forumSystem.displayForums();

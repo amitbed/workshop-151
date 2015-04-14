@@ -12,7 +12,11 @@ namespace ForumSystem
         public string title { get; set; }
         protected List<SubForum> subForums;
         private List<long> admins;
-        
+        public Forum()
+        {
+
+        }
+
         public Forum(string title, List<long> admins,long createdBy)
         {
             if (admins.Contains(createdBy))
@@ -40,7 +44,7 @@ namespace ForumSystem
             }
         }
 
-        public SubForum searchForum(long subForumid)
+        public SubForum searchSubForum(long subForumid)
         {
             foreach (SubForum sb in subForums)
             {
@@ -51,6 +55,11 @@ namespace ForumSystem
             return null;
         }
 
+        public void addSubForum(SubForum sf)
+        {
+            this.subForums.Add(sf);
+        }
+
         public void showForumsMainPage()
         {
             displaySubforums();
@@ -59,20 +68,6 @@ namespace ForumSystem
         public List<SubForum> getSubForums()
         {
             return subForums;
-        }
-
-        
-
-        public void deleteForum(Member potentialAdmin, SubForum requestedSubForum)
-        {
-            if (this.admins.Contains(potentialAdmin.id))
-            {
-                this.subForums.Remove(requestedSubForum);
-            }
-            else
-            {
-                Console.WriteLine("This is not a super admin!");
-            }
         }
     }
 }

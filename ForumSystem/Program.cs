@@ -132,37 +132,7 @@ namespace ForumSystem
         //}
 
         ////This method performs a user login
-        //static bool login(string username, string password, ForumSystem forumSystem)
-        //{
-        //    bool loggedIn = false;
-        //    foreach (Member member in forumSystem.getMembers())
-        //    {
-        //        if (String.Equals(username, member.UserName) && String.Equals(password, member.getPassword()))
-        //        {
-        //            Console.WriteLine("Login Successfull.");
-        //            loggedIn = true;
-        //            return loggedIn;
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Login Failed.");
-        //        }
-        //    }
-        //    return loggedIn;
-        //    /*if (String.Equals(username, test_username) && String.Equals(password, test_password))
-        //    {
-        //        Console.WriteLine("Login Successfull.");
-        //        loggedIn = true;
-        //        Console.WriteLine(loggedIn);
-        //        return loggedIn;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Login Failed.");
-        //        Console.WriteLine(loggedIn);
-        //        return loggedIn;
-        //    }*/
-        //}
+        
 
         ////This method creates a sub-forum
         //static void createSubForum(string title, string parent, List<string> moderators, ForumSystem forumSystem)

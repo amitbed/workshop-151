@@ -37,6 +37,21 @@ namespace ForumSystem
             return email;
         }
 
+        public bool login(long id,string username, string password)
+        {
+            ForumSystem fs = ForumSystem.getInstance();
+            bool loggedIn = false;
+            Member member= fs.searchMember(id);
+            if (string.Equals(username, member.username) && string.Equals(password, member.password))
+            {
+                loggedIn = true;
+                member.isActive = true;
+
+                return loggedIn;
+            }
+            return loggedIn;
+        }
+
         public bool login(string username, string password, ForumSystem forumSystem)
         {
             bool loggedIn = false;

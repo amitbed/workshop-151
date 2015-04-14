@@ -50,5 +50,10 @@ namespace ForumSystem
         {
             return replies;
         }
+
+        public void postReply(Message m)
+        {
+            this.replies.Add(m);
+        }
     }
 }

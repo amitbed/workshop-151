@@ -64,6 +64,7 @@ namespace ForumSystem
             }
             return null;
         }
+
         public void sendComplaint(int admin, long memberId)
         {
             foreach (Thread thread in threads){
@@ -71,6 +72,37 @@ namespace ForumSystem
                 foreach (Message m in messages){
                     if (m.userId==memberId)
                         Console.WriteLine("complaint sent");
+                }
+            }
+        }
+
+        public void createThread()
+        {
+            ForumSystem forumSystem = ForumSystem.getInstance();
+            Console.WriteLine("Select a forum to view:");
+            forumSystem.displayForums();
+            string forum = Console.ReadLine();
+            Console.WriteLine("Select a sub-forum to view");
+            viewSubForums(forum, forumSystem);
+            string subForum = Console.ReadLine();
+            Console.WriteLine("Enter Thread Title:");
+            string threadTitle = Console.ReadLine();
+            Thread thread = new Thread(threadTitle);
+            Console.WriteLine("Enter Message Content:");
+            string content = Console.ReadLine();
+            Message message = new Message(thread.id, content, this.id);
+            thread.getMessages().Add(message);
+            foreach (Forum forumName in forumSystem.getForums())
+            {
+                if (string.Equals(forumName.title, forum))
+                {
+                    foreach (SubForum subForumName in forumName.getSubForums())
+                    {
+                        if (string.Equals(subForumName.Title, subForum))
+                        {
+                            subForumName.getThreads().Add(thread);
+                        }
+                    }
                 }
             }
         }
