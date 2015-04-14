@@ -12,10 +12,6 @@ namespace ForumSystem
         public long enter;
         public string username { get; set; }
         private string email;
-<<<<<<< Updated upstream
-        public string password { get; set; }
-        private bool isActive;
-=======
         public ForumSystem system = ForumSystem.getInstance();
         public string password { get; set; }
         public bool isActive
@@ -34,7 +30,6 @@ namespace ForumSystem
                 }
             }
         }
->>>>>>> Stashed changes
         private List<long> myFriends;
         private List<long> myThreads;
         private List<long> mySubForums;
@@ -156,48 +151,6 @@ namespace ForumSystem
         {
             this.isActive = false;
         }
-        public void postReply(long id)
-        {
-            Console.WriteLine("Select a forum to view:");
-            forumSystem.displayForums();
-            string forum = Console.ReadLine();
-            Console.WriteLine("Select a sub-forum to view:");
-            viewSubForums(forum, forumSystem);
-            string subForum = Console.ReadLine();
-            Console.WriteLine("Select a Discussion ID:");
-            viewDiscussions(subForum, forum, forumSystem);
-            int discussionId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Select a message ID to reply to:");
-            viewMessages(discussionId, subForum, forum, forumSystem);
-            int messageId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Message Content:");
-            string content = Console.ReadLine();
-            Message message = new Message(messageId, content, id);
-            foreach (Forum forumName in forumSystem.getForums())
-            {
-                if (String.Equals(forum, forumName.title))
-                {
-                    foreach (SubForum subForumName in forumName.getSubForums())
-                    {
-                        if (String.Equals(subForum, subForumName.Title))
-                        {
-                            foreach (Thread thread in subForumName.getThreads())
-                            {
-                                if (discussionId == thread.id)
-                                {
-                                    foreach (Message threadMessage in thread.getMessages())
-                                    {
-                                        if (messageId == threadMessage.id)
-                                        {
-                                            threadMessage.getReplies().Add(message);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+       
     }
 }
