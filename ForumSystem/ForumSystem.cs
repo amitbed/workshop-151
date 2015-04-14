@@ -13,7 +13,7 @@ namespace ForumSystem
         private List<Forum> forums;
         public static IdGen idGen;
         long superAdmin;
-        private List<Member> members;
+        public List<Member> members { get; set; }
 
         private ForumSystem() 
         {

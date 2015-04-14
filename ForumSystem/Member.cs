@@ -11,7 +11,7 @@ namespace ForumSystem
         public long id { get; set; }
         public string username { get; set; }
         private string email;
-        private string password;
+        public string password { get; set; }
         private bool isActive;
         private List<long> myFriends;
         private List<long> myThreads;
