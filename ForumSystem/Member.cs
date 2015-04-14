@@ -8,8 +8,8 @@ namespace ForumSystem
 {
     public class Member : User
     {
-        private long id;
-        private string username;
+        public long id { get; set; }
+        public string username { get; set; }
         private string email;
         private string password;
         private bool isActive;
@@ -17,11 +17,13 @@ namespace ForumSystem
         private List<long> myThreads;
         private List<long> mySubForums;
         private List<long> myForums;
-        private double seniority;
+        //private double seniority;
         private double timeLoggedIn;
-        private int numberOfMessagesLastYear;
-        private ForumSystem forumSystem;
+        //private int numberOfMessagesLastYear;
 
+        public Member()
+        {
+        }
         public Member(string username, string password, string emailAddress)
         {
             this.username = username;
@@ -36,29 +38,13 @@ namespace ForumSystem
             this.myFriends = new List<long>();
         }
 
-        public long ID
-        {
-            get { return this.id; }
-        }
-
-        public string UserName
-        {
-            get { return this.username; }
-        }
-
-        public string getPassword()
-        {
-            return password;
-        }
-
-
         //This method creates a sub-forum
         public void createSubForum(string title, string parent, List<string> moderators, ForumSystem forumSystem)
         {
             SubForum subForum = new SubForum(title, moderators, parent);
             foreach (Forum forum in forumSystem.getForums())
             {
-                if (string.Equals(forum.Title, parent))
+                if (string.Equals(forum.title, parent))
                 {
                     forum.getSubForums().Add(subForum);
                 }
@@ -70,7 +56,7 @@ namespace ForumSystem
         {
             foreach (Forum forum in mainForum.getForums())
             {
-                if (String.Equals(forumName, forum.Title))
+                if (String.Equals(forumName, forum.title))
                 {
                     forum.displaySubforums();
                 }
@@ -82,7 +68,7 @@ namespace ForumSystem
         {
             foreach (Forum forum in mainForum.getForums())
             {
-                if (String.Equals(parent, forum.Title))
+                if (String.Equals(parent, forum.title))
                 {
                     foreach (SubForum subForum in forum.getSubForums())
                     {
@@ -100,7 +86,7 @@ namespace ForumSystem
         {
             foreach (Forum forum in mainForum.getForums())
             {
-                if (String.Equals(parent, forum.Title))
+                if (String.Equals(parent, forum.title))
                 {
                     foreach (SubForum subForum in forum.getSubForums())
                     {
@@ -108,7 +94,7 @@ namespace ForumSystem
                         {
                             foreach (Thread thread in subForum.getThreads())
                             {
-                                if (threadId == thread.getId())
+                                if (threadId == thread.id)
                                 {
                                     thread.displayMessages();
                                 }
@@ -124,7 +110,7 @@ namespace ForumSystem
         {
             foreach (Forum forum in mainForum.getForums())
             {
-                if (String.Equals(forumName, forum.Title))
+                if (String.Equals(forumName, forum.title))
                 {
                     foreach (SubForum subForum in forum.getSubForums())
                     {
@@ -132,11 +118,11 @@ namespace ForumSystem
                         {
                             foreach (Thread thread in subForum.getThreads())
                             {
-                                if (discussionId == thread.getId())
+                                if (discussionId == thread.id)
                                 {
                                     foreach (Message message in thread.getMessages())
                                     {
-                                        if (messageId == message.getMessageId())
+                                        if (messageId == message.id)
                                         {
                                             foreach (Message reply in message.getReplies())
                                             {
@@ -165,11 +151,11 @@ namespace ForumSystem
             Thread thread = new Thread(threadTitle);
             Console.WriteLine("Enter Message Content:");
             string content = Console.ReadLine();
-            Message message = new Message(thread.getId(), content, this.id);
+            Message message = new Message(thread.id, content, this.id);
             thread.getMessages().Add(message);
             foreach (Forum forumName in forumSystem.getForums())
             {
-                if (string.Equals(forumName.Title, forum))
+                if (string.Equals(forumName.title, forum))
                 {
                     foreach (SubForum subForumName in forumName.getSubForums())
                     {
@@ -201,7 +187,7 @@ namespace ForumSystem
             Message message = new Message(messageId, content, id);
             foreach (Forum forumName in forumSystem.getForums())
             {
-                if (String.Equals(forum, forumName.Title))
+                if (String.Equals(forum, forumName.title))
                 {
                     foreach (SubForum subForumName in forumName.getSubForums())
                     {
@@ -209,11 +195,11 @@ namespace ForumSystem
                         {
                             foreach (Thread thread in subForumName.getThreads())
                             {
-                                if (discussionId == thread.getId())
+                                if (discussionId == thread.id)
                                 {
                                     foreach (Message threadMessage in thread.getMessages())
                                     {
-                                        if (messageId == threadMessage.getMessageId())
+                                        if (messageId == threadMessage.id)
                                         {
                                             threadMessage.getReplies().Add(message);
                                         }

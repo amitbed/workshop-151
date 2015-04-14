@@ -8,6 +8,8 @@ namespace ForumSystem
 {
     class GoldMember : Member
     {
-
+        public GoldMember()
+        {
+        }
     }
 }

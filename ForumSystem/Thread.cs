@@ -8,8 +8,8 @@ namespace ForumSystem
 {
     public class Thread
     {
-        private int id;
-        private string title;
+        public long id { get; set; }        
+        public string title { get; set; }
         private List<Message> messages;
 
         public Thread(string title)
@@ -31,16 +31,6 @@ namespace ForumSystem
             return messages;
         }
 
-        public int getId()
-        {
-            return id;
-        }
-
-        public long topicID
-        {
-            get { return this.id; }
-        }
-
         public void enterThread()
         {
             displayMessages();
@@ -58,7 +48,7 @@ namespace ForumSystem
         {
             foreach (Message m in messages)
             {
-                if (m.getMessageId()==messageID)
+                if (m.id==messageID)
                 {
                     m.deleteMessage();
                     messages.Remove(m);

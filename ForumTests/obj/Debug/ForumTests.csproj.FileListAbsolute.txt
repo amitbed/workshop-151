@@ -24,3 +24,4 @@ C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop
 C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\bin\Debug\ForumSystem.pdb
 C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\obj\Debug\ForumTests.dll
 C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\obj\Debug\ForumTests.pdb
+C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\obj\Debug\ForumTests.csprojResolveAssemblyReference.cache

@@ -8,5 +8,8 @@ namespace ForumSystem
 {
     class SilverMember : Member
     {
+        public SilverMember()
+        {
+        }
     }
 }

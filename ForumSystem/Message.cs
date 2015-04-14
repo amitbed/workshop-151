@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    public class Message : IMessage
+    public class Message
     {
-        private int id;
-        private int topicId;
-        private string content;
-        private DateTime date;
-        private long userId;
+        public long id { get; set; }
+        public long topicID { get; set; }
+        public string content { get; set; }
+        public DateTime date { get; set; }
+        public long userId { get; set; }
         private List<Message> replies;
 
         //Overload Contructor
-        public Message(int topicId, string content, long userId)
+        public Message(long topicId, string content, long userId)
         {
             Random rnd = new Random();
             this.id = rnd.Next(2000, 20000);
-            this.topicId = topicId;
+            this.topicID = topicId;
             this.content = content;
             this.date = DateTime.Now;
             this.userId = userId;
@@ -30,34 +30,13 @@ namespace ForumSystem
         
 
         //Methods
-        //This method returns a message content
-
-        public long UserID
-        {
-            get { return this.userId; }
-        }
         
-        public string getContent()
-        {
-            return content;
-        }
-
-        //This method returns the message id
-        public int getMessageId()
-        {
-            return id;
-        }
-
         //This method returns the message date
-        public DateTime getDate()
-        {
-            return date;
-        }
 
         //This method displays the message
         public void displayMessage()
         {
-            Console.WriteLine("Message Id: " + getMessageId());
+            Console.WriteLine("Message Id: " + id);
             Console.WriteLine(date);
             Console.WriteLine(content);
         }

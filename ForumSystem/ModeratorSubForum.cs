@@ -8,6 +8,9 @@ namespace ForumSystem
 {
     public class ModeratorSubForum : SubForum
     {
+        public ModeratorSubForum()
+        {
+        }
         public void addThread(Thread thread)
         {
             threads.Add(thread);
@@ -18,7 +21,7 @@ namespace ForumSystem
             int i = 0;
             foreach (Thread t in threads)
             {
-                if (t.getId() == threadID)
+                if (t.id == threadID)
                 {
                     threads.RemoveAt(i);
                     break;

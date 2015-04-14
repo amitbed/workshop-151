@@ -12,8 +12,10 @@ namespace ForumSystem
         private string title;
         protected List<Thread> threads;
         private List<string> moderators;
-        private ForumSystem fs;
 
+        public SubForum()
+        {
+        }
         public SubForum(string title, List<string> moderators, string parent)
         {
             this.id = ForumSystem.idGen.generate();
@@ -47,7 +49,7 @@ namespace ForumSystem
         {
             foreach (Thread thread in threads)
             {
-                Console.WriteLine(thread.topicID + ". " + thread.getTitle());
+                Console.WriteLine(thread.id + ". " + thread.getTitle());
             }
         }
 
@@ -55,7 +57,7 @@ namespace ForumSystem
         {
             foreach (Thread t in threads)
             {
-                if (t.topicID == threadID)
+                if (t.id == threadID)
                 {
                     return t;
                 }
@@ -67,7 +69,7 @@ namespace ForumSystem
             foreach (Thread thread in threads){
                 List<Message> messages = thread.getMessages();
                 foreach (Message m in messages){
-                    if (m.UserID==memberId)
+                    if (m.userId==memberId)
                         Console.WriteLine("complaint sent");
                 }
             }

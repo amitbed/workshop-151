@@ -19,10 +19,11 @@ namespace ForumSystem
         {
             idGen = new IdGen();
             forums = new List<Forum>();
-            User superGuest = new Guest();
+            Guest superGuest = new Guest();
             superGuest.register();
+            members = new List<Member>();
             Member superMember = members.ElementAt(0);
-            superAdmin = superMember.ID;
+            superAdmin = superMember.id;
         }
 
         public static ForumSystem getInstance()
@@ -44,7 +45,7 @@ namespace ForumSystem
         {
             foreach (Forum forum in forums)
             {
-                Console.WriteLine(forum.Title);
+                Console.WriteLine(forum.title);
             }
         }
 
@@ -58,7 +59,7 @@ namespace ForumSystem
             int i = 1;
             foreach (Forum forum in forums)
             {
-                Console.WriteLine(String.Format("{0}.{1}", i, forum.Title));
+                Console.WriteLine(String.Format("{0}.{1}", i, forum.title));
             }
         }
 
@@ -71,7 +72,7 @@ namespace ForumSystem
         {
             foreach (Member m in members)
             {
-                if (m.UserName.Equals(newUsername))
+                if (m.username.Equals(newUsername))
                     return true;
             }
             return false;
@@ -81,7 +82,7 @@ namespace ForumSystem
         {
             foreach (Forum f in forums)
             {
-                if (f.ID == forumId)
+                if (f.id == forumId)
                     return f;
             }
             return null;
@@ -92,15 +93,10 @@ namespace ForumSystem
         {
             foreach (Member m in members)
             {
-                if (m.ID == memberID)
+                if (m.id == memberID)
                     return m;
             }
             return null;
-        }
-
-        public List<Member> getMembers()
-        {
-            return members;
         }
     }    
 

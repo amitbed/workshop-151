@@ -8,7 +8,7 @@ namespace ForumSystem
 {
     class Guest : User
     {
-        private ForumSystem forumSystem;
+        private ForumSystem forumSystem = ForumSystem.getInstance();
         public void register()
         {
             Console.WriteLine("Hi, please enter username");

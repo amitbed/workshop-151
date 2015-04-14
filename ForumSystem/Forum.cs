@@ -8,8 +8,8 @@ namespace ForumSystem
 {   
     public class Forum
     {
-        private long id;
-        private string title;
+        public long id { get; set; }        
+        public string title { get; set; }
         protected List<SubForum> subForums;
         private List<long> admins;
         
@@ -24,17 +24,6 @@ namespace ForumSystem
             }
             else
                 Console.WriteLine("You Cannot create a forum");
-        }
-        
-
-        public string Title
-        {
-            get { return this.title; }
-        }
-
-        public long ID
-        {
-            get { return this.ID; }
         }
 
         public void enterForum()
@@ -76,7 +65,7 @@ namespace ForumSystem
 
         public void deleteForum(Member potentialAdmin, SubForum requestedSubForum)
         {
-            if (this.admins.Contains(potentialAdmin.ID))
+            if (this.admins.Contains(potentialAdmin.id))
             {
                 this.subForums.Remove(requestedSubForum);
             }
