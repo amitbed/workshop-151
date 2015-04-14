@@ -55,18 +55,11 @@ namespace ForumSystem
         public bool login(string username, string password, ForumSystem forumSystem)
         {
             bool loggedIn = false;
-            {
-                {
                     Console.WriteLine("Login Successfull.");
                     loggedIn = true;
                     return loggedIn;
-                }
-                else
-                {
-                    Console.WriteLine("Login Failed.");
-                }
-            }
             return loggedIn;
+        }
             /*if (String.Equals(username, test_username) && String.Equals(password, test_password))
             {
                 Console.WriteLine("Login Successfull.");
@@ -82,4 +75,3 @@ namespace ForumSystem
             }*/
         }
     }
-}

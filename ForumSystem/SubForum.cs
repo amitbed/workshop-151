@@ -76,17 +76,9 @@ namespace ForumSystem
             }
         }
 
-        public void createThread()
+        public void createThread(string forumTitle, string subForumTitle,string threadTitle)
         {
             ForumSystem forumSystem = ForumSystem.getInstance();
-            Console.WriteLine("Select a forum to view:");
-            forumSystem.displayForums();
-            string forum = Console.ReadLine();
-            Console.WriteLine("Select a sub-forum to view");
-            viewSubForums(forum, forumSystem);
-            string subForum = Console.ReadLine();
-            Console.WriteLine("Enter Thread Title:");
-            string threadTitle = Console.ReadLine();
             Thread thread = new Thread(threadTitle);
             Console.WriteLine("Enter Message Content:");
             string content = Console.ReadLine();
@@ -94,11 +86,11 @@ namespace ForumSystem
             thread.getMessages().Add(message);
             foreach (Forum forumName in forumSystem.getForums())
             {
-                if (string.Equals(forumName.title, forum))
+                if (string.Equals(forumName.title, forumTitle))
                 {
                     foreach (SubForum subForumName in forumName.getSubForums())
                     {
-                        if (string.Equals(subForumName.Title, subForum))
+                        if (string.Equals(subForumName.Title, subForumTitle))
                         {
                             subForumName.getThreads().Add(thread);
                         }
