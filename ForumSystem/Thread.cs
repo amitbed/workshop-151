@@ -36,6 +36,11 @@ namespace ForumSystem
             return id;
         }
 
+        public long topicID
+        {
+            get { return this.id; }
+        }
+
         public void enterThread()
         {
             displayMessages();
