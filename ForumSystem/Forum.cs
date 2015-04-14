@@ -78,7 +78,6 @@ namespace ForumSystem
         {
             if (this.admins.Contains(potentialAdmin.ID))
             {
-                requestedSubForum.delete();
                 this.subForums.Remove(requestedSubForum);
             }
             else

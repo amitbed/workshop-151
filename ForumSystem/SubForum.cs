@@ -22,14 +22,11 @@ namespace ForumSystem
             this.moderators = moderators;
         }
         
-        //Methods
-        //This method returns the thread title
         public string Title
         {
             get { return title; }
         }
        
-        //This method returns all threads in the subForum
         public List<Thread> getThreads()
         {
             return threads;
@@ -50,10 +47,21 @@ namespace ForumSystem
         {
             foreach (Thread thread in threads)
             {
-                Console.WriteLine(thread.getTopicId() + ". " + thread.getTitle());
+                Console.WriteLine(thread.topicID + ". " + thread.getTitle());
             }
         }
 
+        public Thread searchForThread(long threadID)
+        {
+            foreach (Thread t in threads)
+            {
+                if (t.topicID == threadID)
+                {
+                    return t;
+                }
+            }
+            return null;
+        }
         public void sendComplaint(int admin, long memberId)
         {
             foreach (Thread thread in threads){
