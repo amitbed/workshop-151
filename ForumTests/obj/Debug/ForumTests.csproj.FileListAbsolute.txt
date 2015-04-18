@@ -20,3 +20,4 @@ C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop
 C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\obj\Debug\ForumTests.pdb
 C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumTests\obj\Debug\ForumTests.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\workshop-151\ForumTests\obj\Debug\ForumTests.csprojResolveAssemblyReference.cache
+C:\Users\ifat\Desktop\project\workshop-151\ForumTests\obj\Debug\ForumTests.csprojResolveAssemblyReference.cache
