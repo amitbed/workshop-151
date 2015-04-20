@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿using System;
+=======
+using System;
+>>>>>>> origin/master
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +12,7 @@ namespace ForumTests
 {
     interface BridgeProject
     {
+<<<<<<< HEAD
         void addNewaddNewForum(ForumSystem.Forum Forum);
         Forum createForum(int id, string title, List<int> admins);
         SubForum createSubForum(int id, string title, List<string> moderators, string parent);
@@ -15,6 +20,23 @@ namespace ForumTests
     }
 }
 
+=======
+        Forum createForum(string title, List<long> admins, long creator);
+        SubForum createSubForum(string title, string parent, List<string> moderators);
+        //void setForumProperties(string ForumName, int moderatorsMaxNum, string format, double precentPasswordPolicy);
+        void removeForum(long forumId);
+        void removeSubForum(long subForumId);
+
+        bool login(long id, string username, string password);
+        void logout();
+
+        //createThread
+        //createMessege
+        //de        
+    }
+}
+
+>>>>>>> origin/master
 
 ////Member Interface
 //virtual public string getContent();

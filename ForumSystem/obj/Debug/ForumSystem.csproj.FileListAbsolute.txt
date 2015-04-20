@@ -8,3 +8,13 @@ C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumSy
 \\psf\Home\Documents\workshop-151\ForumSystem\bin\Debug\ForumSystem.pdb
 \\psf\Home\Documents\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
 \\psf\Home\Documents\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+C:\Users\נופר\Documents\GitHub\workshop151\workshop-151\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
+C:\Users\נופר\Documents\GitHub\workshop151\workshop-151\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
+C:\Users\נופר\Documents\GitHub\workshop151\workshop-151\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
+C:\Users\ifat\Desktop\project\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
+C:\Users\ifat\Desktop\project\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
+C:\Users\ifat\Desktop\project\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
+>>>>>>> origin/master
