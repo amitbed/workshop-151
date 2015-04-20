@@ -5,3 +5,10 @@ C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTe
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\obj\Debug\ForumTests.pdb
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\bin\Debug\ForumSystem.exe
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\bin\Debug\ForumSystem.pdb
+\\psf\Home\Documents\workshop-151\ForumTests\bin\Debug\ForumTests.dll
+\\psf\Home\Documents\workshop-151\ForumTests\bin\Debug\ForumTests.pdb
+\\psf\Home\Documents\workshop-151\ForumTests\bin\Debug\ForumSystem.exe
+\\psf\Home\Documents\workshop-151\ForumTests\bin\Debug\ForumSystem.pdb
+\\psf\Home\Documents\workshop-151\ForumTests\obj\Debug\ForumTests.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\workshop-151\ForumTests\obj\Debug\ForumTests.dll
+\\psf\Home\Documents\workshop-151\ForumTests\obj\Debug\ForumTests.pdb
