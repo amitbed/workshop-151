@@ -41,27 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForum.cs" />
     <Compile Include="Forum.cs" />
     <Compile Include="ForumSystem.cs" />
-    <Compile Include="GoldMember.cs" />
-    <Compile Include="Guest.cs" />
-    <Compile Include="IdGen.cs" />
-    <Compile Include="IForum.cs" />
-    <Compile Include="IForumSystem.cs" />
-    <Compile Include="IMessage.cs" />
-    <Compile Include="ISubForum.cs" />
-    <Compile Include="IThread.cs" />
-    <Compile Include="Member.cs" />
-    <Compile Include="MemberSubForum.cs" />
     <Compile Include="Message.cs" />
-    <Compile Include="ModeratorSubForum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SilverMember.cs" />
     <Compile Include="SubForum.cs" />
     <Compile Include="Thread.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

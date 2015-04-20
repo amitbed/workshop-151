@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace ForumSystem
 {
-    class Guest : User
+    public class Guest : User
     {
-        private ForumSystem forumSystem = ForumSystem.getInstance();
+        private ForumSystem forumSystem;
+        public Guest()
+        {
+            forumSystem = ForumSystem.getInstance();
+        }
+
         public void register()
         {
             Console.WriteLine("Hi, please enter username");
@@ -55,9 +60,8 @@ namespace ForumSystem
         public bool login(string username, string password, ForumSystem forumSystem)
         {
             bool loggedIn = false;
-                    Console.WriteLine("Login Successfull.");
-                    loggedIn = true;
-                    return loggedIn;
+            Console.WriteLine("Login Successfull.");
+            loggedIn = true;
             return loggedIn;
         }
             /*if (String.Equals(username, test_username) && String.Equals(password, test_password))

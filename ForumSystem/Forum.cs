@@ -5,35 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ForumSystem
-{   
+{
     public class Forum
-
     {
-        public long id { get; set; }        
-        public string title { get; set; }
-        protected List<SubForum> subForums;
-        private List<long> admins;
-        public Forum()
+        //Overload Constructor
+        public Forum(int id, string title, List<int> admins)
         {
-
+            this.id = id;
+            this.subForums = new List<SubForum>();
+            this.title = title;
+            this.admins = admins;
         }
 
-        public Forum(string title, List<long> admins,long createdBy)
-        {
-            if (admins.Contains(createdBy))
-            {
-                this.id = ForumSystem.idGen.generate();
-                this.subForums = new List<SubForum>();
-                this.title = title;
-                this.admins = admins;
-            }
-            else
-                Console.WriteLine("You Cannot create a forum");
-        }
+        //Member Variables
+        private int id;
+        private string title;
+        private List<SubForum> subForums;
+        private List<int> admins;
 
-        public void enterForum()
+        //Methods
+
+        //Gets the forum's title
+        public string getTitle()
         {
-            displaySubforums();
+            return title;
         }
 
         //This method displays a forum's sub forums
@@ -41,34 +36,20 @@ namespace ForumSystem
         {
             foreach (SubForum subForum in subForums)
             {
-                Console.WriteLine(subForum.Title);
+                Console.WriteLine(subForum.getTitle());
             }
         }
 
-        public SubForum searchSubForum(long subForumid)
-        {
-            foreach (SubForum sb in subForums)
-            {
-                if (sb.ID == subForumid)
-                    return sb;
-            }
-
-            return null;
-        }
-
-        public void addSubForum(SubForum sf)
-        {
-            this.subForums.Add(sf);
-        }
-
-        public void showForumsMainPage()
-        {
-            displaySubforums();
-        }
-
+        //This method returns a forum's sub-forums
         public List<SubForum> getSubForums()
         {
             return subForums;
+        }
+
+        //This method adds a sub-forum to the current forum
+        public void addSubForum(SubForum subForum)
+        {
+            subForums.Add(subForum);
         }
     }
 }

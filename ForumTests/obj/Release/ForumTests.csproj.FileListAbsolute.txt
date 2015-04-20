@@ -5,5 +5,3 @@ C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTe
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\bin\Release\ForumSystem.pdb
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\obj\Release\ForumTests.dll
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumTests\obj\Release\ForumTests.pdb
-\\psf\Home\Documents\workshop-151\ForumTests\obj\Release\ForumTests.csprojResolveAssemblyReference.cache
-\\psf\Home\Documents\workshop-151\ForumTests\obj\Release\ForumTests.dll

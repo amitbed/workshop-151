@@ -3,23 +3,8 @@ C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumSy
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumSystem\bin\Debug\ForumSystem.pdb
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumSystem\obj\Debug\ForumSystem.exe
 C:\Users\נופר\documents\visual studio 2012\Projects\ForumSystemTests\ForumSystem\obj\Debug\ForumSystem.pdb
-C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
-C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
-C:\Users\hilel\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
-C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumSystem\bin\Debug\ForumSystem.exe.config
-C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumSystem\bin\Debug\ForumSystem.exe
-C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumSystem\bin\Debug\ForumSystem.pdb
-C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
-C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
-<<<<<<< Updated upstream
-C:\Users\Amit\Documents\university\שנה ג\סמסטר ו\סדנא\git\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
-=======
 \\psf\Home\Documents\workshop-151\ForumSystem\bin\Debug\ForumSystem.exe.config
 \\psf\Home\Documents\workshop-151\ForumSystem\bin\Debug\ForumSystem.exe
 \\psf\Home\Documents\workshop-151\ForumSystem\bin\Debug\ForumSystem.pdb
 \\psf\Home\Documents\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
 \\psf\Home\Documents\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb
->>>>>>> Stashed changes
-C:\Users\נופר\Documents\GitHub\workshop151\workshop-151\workshop-151\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
-C:\Users\נופר\Documents\GitHub\workshop151\workshop-151\workshop-151\ForumSystem\obj\Debug\ForumSystem.exe
-C:\Users\נופר\Documents\GitHub\workshop151\workshop-151\workshop-151\ForumSystem\obj\Debug\ForumSystem.pdb

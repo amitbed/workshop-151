@@ -8,52 +8,55 @@ namespace ForumSystem
 {
     public class Message
     {
-        public long id { get; set; }
-        public long topicID { get; set; }
-        public string content { get; set; }
-        public DateTime date { get; set; }
-        public long userId { get; set; }
-        private List<Message> replies;
-
         //Overload Contructor
-        public Message(long topicId, string content, long userId)
+        public Message(int topicId, string content, string userId)
         {
             Random rnd = new Random();
             this.id = rnd.Next(2000, 20000);
-            this.topicID = topicId;
+            this.topicId = topicId;
             this.content = content;
             this.date = DateTime.Now;
             this.userId = userId;
             this.replies = new List<Message>();
         }
         //Member Variables
-        
+        private int id;
+        private int topicId;
+        private string content;
+        private DateTime date;
+        private string userId;
+        private List<Message> replies;
 
         //Methods
-        
+        //This method returns a message content
+        public string getContent()
+        {
+            return content;
+        }
+
+        //This method returns the message id
+        public int getMessageId()
+        {
+            return id;
+        }
+
         //This method returns the message date
+        public DateTime getDate()
+        {
+            return date;
+        }
 
         //This method displays the message
         public void displayMessage()
         {
-            Console.WriteLine("Message Id: " + id);
+            Console.WriteLine("Message Id: " + getMessageId());
             Console.WriteLine(date);
             Console.WriteLine(content);
-        }
-
-        public void deleteMessage()
-        {
-            this.replies = null;
         }
 
         public List<Message> getReplies()
         {
             return replies;
-        }
-
-        public void postReply(Message m)
-        {
-            this.replies.Add(m);
         }
     }
 }

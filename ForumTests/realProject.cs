@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,36 +10,25 @@ namespace ForumTests
     {
         ForumSystem.ForumSystem system = ForumSystem.ForumSystem.getInstance();
 
-        public Forum createForum(string title, List<long> admins, long creator)
+        public void addNewaddNewForum(Forum forum)
         {
-            return system.searchForum(system.addForum(title, admins, creator));
+            system.addForum(forum);
         }
 
-        public SubForum createSubForum(string title, string parent, List<string> moderators)
+        public Forum createForum(int id, string title, List<int> admins)
         {
-            AdminForum currForum = (ForumSystem. AdminForum)system.searchForum(parent);
-            long subForumId = currForum.createSubForum(title, parent, moderators);
-            return currForum.searchSubForum(subForumId);
+            return (new Forum(id, title, admins));
         }
 
-        public void removeForum(long forumId)
+
+        public SubForum createSubForum(int id, string title, List<string> moderators, string parent)
         {
-            throw new NotImplementedException();
+            return new SubForum(id, title, moderators, parent); 
         }
 
-        public void removeSubForum(long subForumId)
+        public void addForumToSystem(Forum forum)
         {
-            throw new NotImplementedException();
-        }
-
-        public bool login(long id, string username, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void logout()
-        {
-            throw new NotImplementedException();
+            system.addForum(forum);
         }
     }
 }

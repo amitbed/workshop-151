@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,55 +22,39 @@ namespace ForumTests
             return this.real;
         }
 
-        public Forum createForum(string title, List<long> admins, long creator)
-        {
-            if (this.real != null)
-            {
-                return createForum(title, admins, creator);
-            }
-            else return null;
-        }
 
-        public SubForum createSubForum(string title, string parent, List<string> moderators)
+        public void addNewaddNewForum(ForumSystem.Forum forum)
         {
             if (this.real != null)
             {
-                return createSubForum(title, parent, moderators);
-            }
-            else return null;
-        }
-
-        public void removeForum(long forumId)
-        {
-            if (this.real != null)
-            {
-                removeForum(forumId);
+                real.addNewaddNewForum(forum);
             }
         }
 
-        public void removeSubForum(long subForumId)
+        public ForumSystem.Forum createForum(int id, string title, List<int> admins)
         {
             if (this.real != null)
             {
-                removeForum(subForumId);
+                return (real.createForum(id, title, admins));
             }
+            return null;
         }
 
-        public bool login(long id, string username, string password)
+
+        public SubForum createSubForum(int id, string title, List<string> moderators, string parent)
         {
             if (this.real != null)
             {
-                return login(id, username, password);
+                return (real.createSubForum(id, title, moderators, parent));
             }
-            else
-                return false;
+            return null;
         }
 
-        public void logout()
+        public void addForumToSystem(Forum forum)
         {
             if (this.real != null)
             {
-                logout();
+                real.addForumToSystem(forum);
             }
         }
     }
