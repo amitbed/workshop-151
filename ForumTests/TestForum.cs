@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 namespace ForumTests
 {
+
+
     [TestClass]
     public class TestForum : ProjectTest
     {
