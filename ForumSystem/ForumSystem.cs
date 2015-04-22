@@ -8,18 +8,19 @@ namespace ForumSystem
 {
     public class ForumSystem
     {
-        //Default Constructor
+        private static ForumSystem forumSystem = null;
+        private List<Forum> forums;
+        private List<Member> members;
+
+        //Constructor
         private ForumSystem()
         {
             forums = new List<Forum>();
+            Guest superGuest = new Guest();
         }
 
-        //Member Variables
-        private static ForumSystem forumSystem = null;
-        private List<Forum> forums;
-
         //Methods
-        public static ForumSystem getInstance()
+        public static ForumSystem initForumSystem()
         {
             if (forumSystem == null)
             {
@@ -48,5 +49,21 @@ namespace ForumSystem
         {
             return forums;
         }
+
+        internal void addMember(string username, string password, string email)
+        {
+            members.Add(new Member(username, password, email));
+        }
+
+        public bool isUsernameExists(string newUsername)
+        {
+            foreach (Member m in members)
+            {
+                if (m.username.Equals(newUsername))
+                    return true;
+            }
+            return false;
+        }
+
     }
 }
