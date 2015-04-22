@@ -16,7 +16,6 @@ namespace ForumSystem
         private ForumSystem()
         {
             forums = new List<Forum>();
-            Guest superGuest = new Guest();
         }
 
         //Methods
